@@ -4,12 +4,13 @@
   "description": "React Tree View Component",
   "main": "index.js",
   "scripts": {
-    "prepublish": "npm run lib",
+    "prepublish": "npm run snyk-protect && npm run lib",
     "lib": "npm run babel",
     "babel": "rimraf lib && babel src/ -d lib/",
     "test": "./node_modules/.bin/karma start karma.conf.js",
     "test-travis": "./node_modules/karma/bin/karma start --browsers Firefox --single-run",
-    "example": "webpack-dev-server --content-base ./example/ --config ./example/webpack.config.js"
+    "example": "webpack-dev-server --content-base ./example/ --config ./example/webpack.config.js",
+    "snyk-protect": "snyk protect"
   },
   "peerDependencies": {
     "react": "^0.14 || ^15.0",
@@ -76,6 +77,8 @@
     "radium": "^0.16.6",
     "react-utils": "alexcurtis/react-utils",
     "shallowequal": "^0.2.2",
-    "velocity-react": "^1.1.2"
-  }
+    "velocity-react": "^1.1.2",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
